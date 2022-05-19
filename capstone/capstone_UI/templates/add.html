@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron container">
+  <center><h4><b>Add a new weekly entry with the form below:</b></h4></center>
+  <br>
+  <br>
+  <form method="POST" action="">
+      {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-4">NEW ENTRY</legend>
+          <div class ="form-group">
+            {{ form.year.label (class="form-control-label") }} {{ form.year(class="form-control form-control-lg") }}
+              {{ form.qq.label (class="form-control-label") }} {{ form.qq(class="form-control form-control-lg") }}
+              {{ form.week.label (class="form-control-label") }} {{ form.week(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+              {{ form.emp_id.label (class="form-control-label") }} {{ form.emp_id(class="form-control form-control-lg") }}
+              {{ form.product_id.label (class="form-control-label") }} {{ form.product_id(class="form-control form-control-lg") }}
+              {{ form.p_quantity.label (class="form-control-label") }} {{ form.p_quantity(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+              {{ form.ESP_id.label (class="form-control-label") }} {{ form.ESP_id(class="form-control form-control-lg") }}
+              {{ form.ESP_quantity.label (class="form-control-label") }} {{ form.ESP_quantity(class="form-control form-control-lg") }}
+              </div>
+        </fieldset>
+        <div class="form-group">
+          <center><h5>{{ form.submit(class="btn btn-outline-info") }}</h5></center>
+          </div>
+        </form>
+      </div>
+      <div class="border-top pt-3">
+        <center><small class="text-muted">Thank you for your entry!</small></center>
+      </div>
+<br>
+<br>
+  <head>
+    <style> table, th, td {
+    border: 1px solid black;
+  }
+      </style>
+    </head>
+    <center><body>
+      <h2>Employee Reference Table</h2>
+      <table>
+        <tr>
+
+          <th style="padding:10px"> EMP ID  </th>
+          <th style="padding:10px">  First Name  </th>
+          <th style="padding:10px">  Last Name  </th>
+          <th style="padding:10px">  Region  </th>
+        </tr>
+        <tr>
+          <td>EMP244</td>
+         <td>Gina</td>
+         <td>Evans</td>
+         <td><center>NW</center></td>
+        </tr>
+        <tr>
+          <td>EMP256</td>
+          <td>Harry</td>
+          <td>Lawson</td>
+          <td><center>NW</center></td>
+        </tr>
+        <tr>
+          <td>EMP234</td>
+          <td>Jane</td>
+          <td>Bachmann</td>
+          <td><center>NW</center></td>
+        </tr>
+        <tr>
+          <td>EMP267</td>
+          <td>Beverly</td>
+          <td>Clement</td>
+          <td><center>SW</center></td>
+        </tr>
+        <tr>
+          <td>EMP290</td>
+          <td>Maude</td>
+          <td>Allen</td>
+          <td><center>SW</center></td>
+        </tr>
+      </table>
+</body></center>
+<br>
+<br>
+</div>
+{% endblock %}

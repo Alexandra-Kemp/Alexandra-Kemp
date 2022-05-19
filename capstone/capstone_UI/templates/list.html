@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Here is a list of all weekly entries created by employee: </h1>
+  <ul>
+    {% for emp in Employees  %}
+    <p>===================================================</p>
+    <li>Employee ID : {{emp.emp_id}}</li>
+    <li>Employee name: {{emp.name}}</li>
+    <li> Weekly Sale of Product {{sales_of_products.product_id}}:
+      <ul>
+        {{year}} and {{week}}
+      </ul>
+      <ul>
+        {% for p_quantity in sales_of_products.p_quantity  %}
+        <li>
+            {{p_quantity}}
+        </li>
+        {% endfor %}
+      </ul>
+        {% for ESP_quantity in sales_of_products.ESP_quantity  %}
+        <li>
+            {{ESP_quantity}}
+        </li>
+        {% endfor %}
+    </ul>
+    <li>Total Sales: {{(sales_of_products.p_totalforweek)+(sales_of_products.ESP_totalforweek)}}</li>
+    {% endfor %}
+  </div>
+{% endblock %}
